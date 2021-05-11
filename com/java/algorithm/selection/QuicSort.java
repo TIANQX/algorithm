@@ -1,6 +1,5 @@
 package com.java.algorithm.selection;
 
-import com.sun.org.apache.xerces.internal.dom.PSVIAttrNSImpl;
 
 /**
  * @Author tqx

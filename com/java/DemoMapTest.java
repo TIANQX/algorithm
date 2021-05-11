@@ -1,6 +1,5 @@
 package com.java;
 
-import com.sun.xml.internal.fastinfoset.util.CharArray;
 
 import java.util.HashMap;
 import java.util.Scanner;

@@ -1,9 +1,6 @@
 package com.java.algorithm.selection;
 
-import sun.security.util.Length;
 
-import java.util.List;
-import java.util.SortedMap;
 
 /**
  * @Author tqx
