@@ -18,21 +18,29 @@ public class SingleLinkedListDemo {
     public static void main(String[] args) {
 
         HeroNode hero1 = new HeroNode(1, "宋江", "及时雨");
-        HeroNode hero2 = new HeroNode(2, "卢俊义", "玉麒麟");
-        HeroNode hero3 = new HeroNode(3, "吴用", "智多星");
-        HeroNode hero4 = new HeroNode(4, "林冲", "豹子头");
+        HeroNode hero3 = new HeroNode(3, "卢俊义", "玉麒麟");
+        HeroNode hero5 = new HeroNode(5, "吴用", "智多星");
+        HeroNode hero7 = new HeroNode(7, "林冲", "豹子头");
+        HeroNode hero2 = new HeroNode(2, "22", "22");
+        HeroNode hero4 = new HeroNode(4, "44", "44");
+        HeroNode hero6 = new HeroNode(6, "66", "66");
+        HeroNode hero8 = new HeroNode(8, "88", "88");
         SingleLinkedList singleLinkedList = new SingleLinkedList();
+        SingleLinkedList singleLinkedList2 = new SingleLinkedList();
 //        singleLinkedList.add(hero1);
 //        singleLinkedList.add(hero2);
 //        singleLinkedList.add(hero3);
 //        singleLinkedList.add(hero4);
 
         singleLinkedList.addByNo(hero1);
-        singleLinkedList.addByNo(hero4);
         singleLinkedList.addByNo(hero3);
-        singleLinkedList.addByNo(hero2);
-        singleLinkedList.addByNo(hero2);
-        HeroNode hero5 = new HeroNode(4, "林", "豹子头~");
+        singleLinkedList.addByNo(hero5);
+        singleLinkedList.addByNo(hero7);
+        singleLinkedList2.addByNo(hero2);
+        singleLinkedList2.addByNo(hero4);
+        singleLinkedList2.addByNo(hero6);
+        singleLinkedList2.addByNo(hero8);
+   /*     HeroNode hero5 = new HeroNode(4, "林", "豹子头~");
         singleLinkedList.update(hero5);
         singleLinkedList.list();
         System.out.println("删除后");
@@ -42,11 +50,16 @@ public class SingleLinkedListDemo {
         System.out.printf("链表长度为%d", getLength(singleLinkedList.getHead()));
         System.out.println("倒数第二个节点");
         System.out.println(getLastIndexNode(singleLinkedList.getHead(), 2));
-        System.out.println("逆序打印：栈");
+        System.out.println("逆序打印：栈，没有改变链表的结构");
         reversePrint(singleLinkedList.getHead());
 
         System.out.println("单链表反转");
         reverseList(singleLinkedList.getHead());
+        singleLinkedList.list();*/
+        singleLinkedList.list();
+        singleLinkedList2.list();
+        mergeLinkedList(singleLinkedList.getHead(), singleLinkedList2.getHead());
+        System.out.println("合并之后打印");
         singleLinkedList.list();
 
     }
@@ -139,6 +152,45 @@ public class SingleLinkedListDemo {
         }
         //将head.next指向reverseHead.next实现单链表的反转
         head.next = reverseHead.next;
+
+
+    }
+
+    /**
+     * @Author tqx
+     * @CreateDate 2021/5/13
+     * @Description TODO 合并两个有序的单链表，合并之后依然有序
+     * @Param Return
+     */
+    public static void mergeLinkedList(HeroNode head1, HeroNode head2) {
+        //head2合并到head1中
+        HeroNode cur1 = head1.next;
+        HeroNode cur2 = head2.next;
+        HeroNode next1 = null;
+        HeroNode next2 = null;
+        HeroNode temp1 = null;
+        HeroNode temp2 = null;
+        if (head1.next == null) {
+
+        }
+        while (cur1.next != null) {
+            //比较no大小将
+            if (cur1.next.no > cur2.next.no) {
+                cur1 = cur1.next;
+                break;
+            }else{
+
+            }
+
+        }
+        //1.将cur2.next存入临时
+        temp2 = cur2.next;
+        //2.将cur2.next指向cur2.next.next
+        cur2.next = cur2.next.next;
+        //3.temp2.next指向cur1.next.next
+        temp2.next = cur1.next.next;
+        cur1.next = temp2;
+        cur2 = cur2.next;
 
 
     }
